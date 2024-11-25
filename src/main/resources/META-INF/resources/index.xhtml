@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui" lang="en">
+<h:head>
+    <meta charset="UTF-8"/>
+    <title>Bookstore</title>
+</h:head>
+<h:body>
+    <h1>BookStore (#{bookService.countAll()})</h1>
+    <p:dataTable var="book" value="#{bookService.findAll()}">
+        <p:column headerText="Isbn">
+            #{book.isbn}
+        </p:column>
+        <p:column headerText="Title">
+            #{book.title}
+        </p:column>
+        <p:column headerText="Cover">
+            <p:graphicImage value="#{book.imageUrl}" />
+        </p:column>
+    </p:dataTable>
+</h:body>
+</html>
